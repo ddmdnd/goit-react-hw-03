@@ -1,0 +1,40 @@
+.containerUser {
+  display: flex;
+  width: 574px;
+  height: 134px;
+  gap: 170px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-bottom: 26px;
+}
+.listUser {
+  display: flex;
+  /* align-items: flex-start; */
+  gap: 20px;
+  flex-direction: column;
+  list-style: none;
+  text-align: left;
+  padding-left: 0px;
+  font-size: 25px;
+  font-weight: 600;
+}
+.buttomDelete {
+  display: flex;
+  justify-content: center;
+  width: 119px;
+  height: 57px;
+  font-weight: 600;
+  font-size: 25px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #f3f1f0;
+}
+.iconPhoneUser {
+  margin-right: 14px;
+}
+.userListItem {
+  display: flex;
+  align-items: center;
+}
