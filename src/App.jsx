@@ -4,10 +4,17 @@ import ContactList from "./components /ConractList/ContactList";
 import SearchBox from "./components /SearchBox/SearchBox";
 import data from "./data.json";
 import ContactForm from "./components /ContactForm/ContactForm";
+import { useEffect } from "react";
 
 function App() {
   const [dataContact, setdataContact] = useState(data);
-  const [dataInput, setdataInput] = useState(data);
+  const [dataInput, setdataInput] = useState(() => {
+    const localCount = window.localStorage.getItem("saveCount");
+    if (JSON.parse(localCount) != null) {
+      return JSON.parse(localCount);
+    }
+    return data;
+  });
   const handleChange = (e) => {
     const value = e.target.value.toUpperCase();
     const filterContacts = dataContact.filter(
@@ -27,6 +34,9 @@ function App() {
     setdataInput(testfilter);
     setdataContact(testfilter);
   };
+  useEffect(() => {
+    window.localStorage.setItem("saveCount", JSON.stringify(dataInput));
+  }, [dataInput]);
   return (
     <>
       <div className="appContainer">
