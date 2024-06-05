@@ -9,12 +9,15 @@ const SearchBox = ({ filterUsers }) => {
 
   return (
     <Formik>
-      <Field
-        type="text"
-        className={css.inputFilterUser}
-        onChange={filterUsers}
-        id={filterId}
-      />
+      <div className={css.inputBox}>
+        <label className={css.labelInput}>Find contacts by name</label>
+        <Field
+          type="text"
+          className={css.inputFilterUser}
+          onChange={filterUsers}
+          id={filterId}
+        />
+      </div>
     </Formik>
   );
 };

@@ -1,5 +1,12 @@
+.inputBox {
+  display: flex;
+  flex-direction: column;
+}
 .inputFilterUser {
   margin-bottom: 10px;
   width: 574px;
   height: 56px;
+}
+.labelInput {
+  font-size: 25px;
 }
