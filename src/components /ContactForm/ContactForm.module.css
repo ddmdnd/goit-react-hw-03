@@ -1,0 +1,27 @@
+.formAddUser {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  width: 350px;
+  /* height: 00px; */
+  border: 1px solid black;
+  border-radius: 5px;
+  /* align-items: center; */
+}
+.formAddUser lable {
+  display: block;
+}
+.lableFormInput {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+.inputFilterUser {
+  margin-bottom: 20px;
+  width: 300px;
+  margin-left: 25px;
+}
+.buttonSubmit {
+  width: 200px;
+  margin: auto;
+  margin-bottom: 10px;
+}
