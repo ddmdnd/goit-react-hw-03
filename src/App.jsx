@@ -7,13 +7,19 @@ import ContactForm from "./components /ContactForm/ContactForm";
 import { useEffect } from "react";
 
 function App() {
-  const [dataContact, setdataContact] = useState(data);
-  const [dataInput, setdataInput] = useState(() => {
+  const [dataContact, setdataContact] = useState(() => {
     const localCount = window.localStorage.getItem("saveCount");
     if (JSON.parse(localCount) != null) {
       return JSON.parse(localCount);
     }
     return data;
+  });
+  const [dataInput, setdataInput] = useState(() => {
+    const localCount = window.localStorage.getItem("saveCount");
+    if (JSON.parse(localCount) != null) {
+      return JSON.parse(localCount);
+    }
+    return dataContact;
   });
   const handleChange = (e) => {
     const value = e.target.value.toUpperCase();
@@ -35,8 +41,8 @@ function App() {
     setdataContact(testfilter);
   };
   useEffect(() => {
-    window.localStorage.setItem("saveCount", JSON.stringify(dataInput));
-  }, [dataInput]);
+    window.localStorage.setItem("saveCount", JSON.stringify(dataContact));
+  }, [dataContact]);
   return (
     <>
       <div className="appContainer">
