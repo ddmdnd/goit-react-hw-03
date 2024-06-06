@@ -14,13 +14,7 @@ function App() {
     }
     return data;
   });
-  const [dataInput, setdataInput] = useState(() => {
-    const localCount = window.localStorage.getItem("saveCount");
-    if (JSON.parse(localCount) != null) {
-      return JSON.parse(localCount);
-    }
-    return dataContact;
-  });
+  const [dataInput, setdataInput] = useState(dataContact);
   const handleChange = (e) => {
     const value = e.target.value.toUpperCase();
     const filterContacts = dataContact.filter(
@@ -33,7 +27,6 @@ function App() {
 
   const handleSubmit = (newContact) => {
     setdataContact((prevData) => [...prevData, newContact]);
-    setdataInput((prevData) => [...prevData, newContact]);
   };
   const deleteUser = (deleteContact) => {
     const testfilter = dataInput.filter((user) => user.id !== deleteContact);
@@ -42,6 +35,7 @@ function App() {
   };
   useEffect(() => {
     window.localStorage.setItem("saveCount", JSON.stringify(dataContact));
+    setdataInput(dataContact);
   }, [dataContact]);
   return (
     <>
@@ -51,6 +45,7 @@ function App() {
         <SearchBox filterUsers={handleChange} />
         <div className="containerContact">
           <ContactList users={dataInput} onClick={deleteUser} />
+          {/* <ContactList users={dataInput} onClick={deleteUser} /> */}
         </div>
       </div>
     </>
