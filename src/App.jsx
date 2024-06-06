@@ -45,7 +45,6 @@ function App() {
         <SearchBox filterUsers={handleChange} />
         <div className="containerContact">
           <ContactList users={dataInput} onClick={deleteUser} />
-          {/* <ContactList users={dataInput} onClick={deleteUser} /> */}
         </div>
       </div>
     </>
