@@ -29,7 +29,7 @@ function App() {
     setdataContact((prevData) => [...prevData, newContact]);
   };
   const deleteUser = (deleteContact) => {
-    const testfilter = dataInput.filter((user) => user.id !== deleteContact);
+    const testfilter = dataContact.filter((user) => user.id !== deleteContact);
     setdataInput(testfilter);
     setdataContact(testfilter);
   };
